@@ -11,8 +11,22 @@ public class Player : MonoBehaviour
     private float moveForce = 10f;
     [SerializeField]
     private float jumpForce = 11f;
-    // public float maxVelocity = 22f;
+    // private float maxVelocity = 22f;
+
+    private float movementX;
     
+    [SerializeField]
+    private Rigidbody2D myBody;
+
+    private SpriteRenderer sr;
+
+    private Animator anim;
+    private string WALK_ANIMATION = "walk";
+    
+
+
+
+
 
 
 

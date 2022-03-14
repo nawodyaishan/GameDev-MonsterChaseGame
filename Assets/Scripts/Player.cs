@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Declaring Public Variables 
-    public float moveForce = 10f;
-    public float jumpForce = 11f;
+    
+     
+    // Declaring Private Variables 
+    [SerializeField]
+    private float moveForce = 10f;
+    [SerializeField]
+    private float jumpForce = 11f;
     // public float maxVelocity = 22f;
     
 

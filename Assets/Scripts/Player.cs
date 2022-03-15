@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
     private SpriteRenderer sr;
 
     private Animator anim;
-    private string WALK_ANIMATION = "walk";
+    private string WALK_ANIMATION = "Walk";
 
     private void Awake()
     {
@@ -62,19 +62,40 @@ public class Player : MonoBehaviour
     // Setting Animations for movement
     void AnimatePlayer()
     {
-        if (movementX >= 0)
+        if (movementX > 0)
         {
             anim.SetBool(WALK_ANIMATION, true);
+            sr.flipX = false;
         }
-        else if (movementX == 0)
+        else if (movementX < 0)
+        {
+            anim.SetBool(WALK_ANIMATION, true);
+            sr.flipX = true;
+        }
+        else
         {
             anim.SetBool(WALK_ANIMATION, false);
         }
-        else if (movementX <= 0)
-        {
-            anim.SetBool(WALK_ANIMATION, true);
-        }
+
+
+        
 
         
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

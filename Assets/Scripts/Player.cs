@@ -32,11 +32,18 @@ public class Player : MonoBehaviour
         
 
     }
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
     void Update()
     {
         PlayerMoveKeyboard();
         AnimatePlayer();
-        PlayerJump();
+
     }
 
     // Assigning player speed and movement
@@ -68,23 +75,20 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, false);
         }
     }
-    void PlayerJump()
-    {
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
+    void PlayerJump() {
+
+        if (Input.GetButtonDown("Jump") && isGrounded) {
             isGrounded = false;
-            Debug.Log("Jump Pressed");
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
-            
         }
+
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("GROUND_TAG"))
-        {
-            isGrounded = true; 
-        }
+
+        if (collision.gameObject.CompareTag(GROUND_TAG)) 
+            isGrounded = true;
     }
 }
 

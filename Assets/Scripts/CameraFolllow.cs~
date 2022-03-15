@@ -11,7 +11,7 @@ public class CameraFolllow : MonoBehaviour
 
     [SerializeField]
     private float minX, maxX;
-      
+     
     
         
     // Start is called before the first frame update
@@ -31,12 +31,6 @@ public class CameraFolllow : MonoBehaviour
         tempPos.x = player.position.x;
 
         transform.position = tempPos;
-
-        if (tempPos.x < minX)
-            tempPos.x = minX;
-
-        if (tempPos.x > maxX)
-            tempPos.x = maxX;
         
         
 

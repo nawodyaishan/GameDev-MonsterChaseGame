@@ -48,6 +48,11 @@ public class Player : MonoBehaviour
         AnimatePlayer();
 
     }
+    
+    private void FixedUpdate()
+    {
+        PlayerJump();
+    }
 
     // Assigning player speed and movement
     void PlayerMoveKeyboard()

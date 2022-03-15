@@ -47,6 +47,7 @@ public class Player : MonoBehaviour
         AnimatePlayer();
     }
 
+    // Assigning player speed and movement
     void PlayerMoveKeyboard()
     {
         movementX = Input.GetAxisRaw("Horizontal");
@@ -58,6 +59,7 @@ public class Player : MonoBehaviour
         //class
     }
 
+    // Setting Animations for movement
     void AnimatePlayer()
     {
         if (movementX >= 0)

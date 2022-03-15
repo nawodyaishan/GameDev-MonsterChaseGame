@@ -20,7 +20,7 @@ public class Monster : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        myBody.velocity = new Vector2(speed, myBody.velocity.y);
+        myBody.velocity = new Vector2(speed, myBody.velocity.y); 
         
     }
 } //class

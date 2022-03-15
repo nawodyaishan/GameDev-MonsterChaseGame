@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    
-     
     // Declaring Private Variables 
     [SerializeField]
     private float moveForce = 10f;
@@ -46,7 +44,6 @@ public class Player : MonoBehaviour
     {
         PlayerMoveKeyboard();
         AnimatePlayer();
-
     }
     
     private void FixedUpdate()
@@ -89,7 +86,6 @@ public class Player : MonoBehaviour
             isGrounded = false;
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

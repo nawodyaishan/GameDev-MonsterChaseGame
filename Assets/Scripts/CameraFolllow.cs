@@ -19,7 +19,7 @@ public class CameraFolllow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         
         // Assigning Player's x position to camera

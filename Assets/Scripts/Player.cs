@@ -14,22 +14,29 @@ public class Player : MonoBehaviour
     private float jumpForce = 11f;
     // private float maxVelocity = 22f;
 
+    [SerializeField]
     private float movementX;
     
     [SerializeField]
     private Rigidbody2D myBody;
 
+    [SerializeField]
     private SpriteRenderer sr;
 
+    [SerializeField]
     private Animator anim;
+    
     private string WALK_ANIMATION = "Walk";
 
+    [SerializeField]
+    private bool isGrounded;
+    
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-
         sr = GetComponent<SpriteRenderer>();
+        
 
     }
 
@@ -45,6 +52,7 @@ public class Player : MonoBehaviour
     {
         PlayerMoveKeyboard();
         AnimatePlayer();
+        PlayerJump();
     }
 
     // Assigning player speed and movement
@@ -76,10 +84,16 @@ public class Player : MonoBehaviour
         {
             anim.SetBool(WALK_ANIMATION, false);
         }
+    }
 
-
-        
-
+    void PlayerJump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            Debug.Log("Jump Pressed");
+            myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            
+        }
         
     }
 }

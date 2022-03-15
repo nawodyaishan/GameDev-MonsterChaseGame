@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,22 +15,14 @@ public class Player : MonoBehaviour
     private float jumpForce = 11f;
     // private float maxVelocity = 22f;
 
-    [SerializeField]
+
     private float movementX;
-    
-    [SerializeField]
     private Rigidbody2D myBody;
-
-    [SerializeField]
     private SpriteRenderer sr;
-
-    [SerializeField]
     private Animator anim;
-    
     private string WALK_ANIMATION = "Walk";
-
-    [SerializeField]
-    private bool isGrounded;
+    private string GROUND_TAG = "Ground";
+    private bool isGrounded = true;
     
     private void Awake()
     {
@@ -39,15 +32,6 @@ public class Player : MonoBehaviour
         
 
     }
-
-
-    // Start is called before the first frame update
-    void Start() 
-    {
-         
-    }
-
-    // Update is called once per frame
     void Update()
     {
         PlayerMoveKeyboard();
@@ -66,7 +50,6 @@ public class Player : MonoBehaviour
         
         //class
     }
-
     // Setting Animations for movement
     void AnimatePlayer()
     {
@@ -85,16 +68,23 @@ public class Player : MonoBehaviour
             anim.SetBool(WALK_ANIMATION, false);
         }
     }
-
     void PlayerJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            isGrounded = false;
             Debug.Log("Jump Pressed");
             myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
             
         }
-        
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("GROUND_TAG"))
+        {
+            isGrounded = true; 
+        }
     }
 }
 

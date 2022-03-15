@@ -61,3 +61,4 @@ crashlytics-build.properties
 *.DS_Store
 
 .idea
+mono_crash.448a3ad828.0.json

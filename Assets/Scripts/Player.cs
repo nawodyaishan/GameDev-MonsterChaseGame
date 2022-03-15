@@ -14,23 +14,26 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float jumpForce = 11f;
     // private float maxVelocity = 22f;
-
-
+    
     private float movementX;
+    
     private Rigidbody2D myBody;
+    
     private SpriteRenderer sr;
+    
     private Animator anim;
+    
     private string WALK_ANIMATION = "Walk";
+        
+    private bool isGrounded;
+    
     private string GROUND_TAG = "Ground";
-    private bool isGrounded = true;
     
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        
-
     }
     // Start is called before the first frame update
     void Start()
@@ -86,7 +89,6 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
         if (collision.gameObject.CompareTag(GROUND_TAG)) 
             isGrounded = true;
     }

@@ -37,14 +37,14 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start() 
     {
-        
+         
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMoveKeyboard();
-        
+        AnimatePlayer();
     }
 
     void PlayerMoveKeyboard()
@@ -52,10 +52,27 @@ public class Player : MonoBehaviour
         movementX = Input.GetAxisRaw("Horizontal");
         
         Debug.Log("Move X Value is : " + movementX);
-        
-        
-        
 
+        transform.position += new Vector3(movementX, 0f, 0f) * Time.deltaTime * moveForce;
+        
         //class
+    }
+
+    void AnimatePlayer()
+    {
+        if (movementX >= 0)
+        {
+            anim.SetBool(WALK_ANIMATION, true);
+        }
+        else if (movementX == 0)
+        {
+            anim.SetBool(WALK_ANIMATION, false);
+        }
+        else if (movementX <= 0)
+        {
+            anim.SetBool(WALK_ANIMATION, true);
+        }
+
+        
     }
 }

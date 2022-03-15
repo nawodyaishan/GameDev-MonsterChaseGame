@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,17 +23,19 @@ public class Player : MonoBehaviour
 
     private Animator anim;
     private string WALK_ANIMATION = "walk";
-    
 
+    private void Awake()
+    {
+        myBody = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
+        sr = GetComponent<SpriteRenderer>();
 
-
-
-
+    }
 
 
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         
     }
@@ -40,6 +43,19 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerMoveKeyboard();
         
+    }
+
+    void PlayerMoveKeyboard()
+    {
+        movementX = Input.GetAxisRaw("Horizontal");
+        
+        Debug.Log("Move X Value is : " + movementX);
+        
+        
+        
+
+        //class
     }
 }

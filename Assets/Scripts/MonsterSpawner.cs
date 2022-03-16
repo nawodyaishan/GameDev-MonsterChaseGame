@@ -29,5 +29,22 @@ public class MonsterSpawner : MonoBehaviour
     IEnumerator SpawnedMonsters()
     {
         yield return new WaitForSeconds(Random.Range(1, 5));
+
+        randomIndex = Random.Range(0, monsterReference.Length);
+        randomSide = Random.Range(0, 2);
+
+        spawnedMonster = Instantiate(monsterReference[randomIndex]);
+
+        if (randomSide == 0)
+        {
+            spawnedMonster.transform.position = leftPos.position;
+            spawnedMonster.GetComponent<Monster>().speed = Random.Range(4, 10);
+        }
+
+        else
+        {
+            spawnedMonster.transform.position = rightPos.position;
+            spawnedMonster.GetComponent<Monster>().speed = - Random.Range(4, 10);
+        }
     }
 }

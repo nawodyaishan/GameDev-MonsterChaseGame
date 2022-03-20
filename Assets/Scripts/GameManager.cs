@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -26,19 +28,32 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         if (instance == null)
+        {
             instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        { 
+                
+            Destroy(gameObject);
+        }
     }
 
+    private void OnEnable()
+    {
 
-    // Start is called before the first frame update
-    void Start()
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

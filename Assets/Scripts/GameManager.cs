@@ -1,21 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour
 {
-    public void PlayGame()
+    public static GameManager instance;
+
+    [SerializeField] private GameObject[] characters;
+
+    private int _charIndex;
+
+    public int CharIndex
     {
-        string clickedObj = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.name;
-        
-        Debug.Log("Index: ");
+        get
+        {
+            return _charIndex;
+        }
+        set
+        {
+            _charIndex = value;
+        }
     }
-    
-    //[SerializeField] private GameObject[] characters;
-    
-    
-    
+
+    private void Awake()
+    {
+        if (instance == null)
+            instance = this;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {

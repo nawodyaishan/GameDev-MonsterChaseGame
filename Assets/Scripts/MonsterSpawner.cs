@@ -1,57 +1,55 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject[] monsterReference;
+
+    [SerializeField]
+    private GameObject[] monsterReference;
 
     private GameObject spawnedMonster;
 
-    [SerializeField] private Transform leftPos, rightPos;
+    [SerializeField]
+    private Transform leftPos, rightPos;
 
     private int randomIndex;
-
     private int randomSide;
-
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnedMonsters());
+        StartCoroutine(SpawnMonsters());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
+    IEnumerator SpawnMonsters() {
 
-    IEnumerator SpawnedMonsters()
-    {
-        while (true)
-        {
+        while (true) {
+
             yield return new WaitForSeconds(Random.Range(1, 5));
 
             randomIndex = Random.Range(0, monsterReference.Length);
             randomSide = Random.Range(0, 2);
 
             spawnedMonster = Instantiate(monsterReference[randomIndex]);
-        
-            // Left Side Movement 
+
+            // left side
             if (randomSide == 0)
             {
+
                 spawnedMonster.transform.position = leftPos.position;
                 spawnedMonster.GetComponent<Monster>().speed = Random.Range(4, 10);
-            }
 
-            // Right Side Movement
+            }
             else
             {
+                // right side
                 spawnedMonster.transform.position = rightPos.position;
-                spawnedMonster.GetComponent<Monster>().speed = - Random.Range(4, 10);
+                spawnedMonster.GetComponent<Monster>().speed = -Random.Range(4, 10);
                 spawnedMonster.transform.localScale = new Vector3(-1f, 1f, 1f);
 
             }
-        }
+
+        } // while loop
+
     }
-}
+
+
+} 

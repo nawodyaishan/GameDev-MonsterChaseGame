@@ -52,7 +52,12 @@ public class GameManager : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        
+        if (scene.name == "Gameplay") ;
+        {
+            Instantiate(characters[CharIndex]);
+            
+            
+        }
     }
 
 

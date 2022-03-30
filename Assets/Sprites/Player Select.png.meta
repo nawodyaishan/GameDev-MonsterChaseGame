@@ -1,7 +1,13 @@
 fileFormatVersion: 2
-guid: 61e8d8d37fffc43da9528569e8fa5239
+guid: a95c1ced0e14f4b28a5ce47f1f1adf01
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3079569258902918314
+    second: Player 1 Select
+  - first:
+      213: 8453041443550048800
+    second: Player 2 Select
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -89,7 +95,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
+    buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -112,23 +118,11 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player Select_0
+      name: Player 1 Select
       rect:
         serializedVersion: 2
         x: 13
@@ -142,14 +136,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df0d1d69ee93842229afbdfc4cafd966
-      internalID: 1701015233
+      spriteID: 65be0e5431c2345d0800000000000000
+      internalID: -3079569258902918314
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player Select_1
+      name: Player 2 Select
       rect:
         serializedVersion: 2
         x: 369
@@ -163,8 +157,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a345e83bfec04af8bccc05537251567
-      internalID: -710764186
+      spriteID: 022b472286c3f4570800000000000000
+      internalID: 8453041443550048800
       vertices: []
       indices: 
       edges: []
@@ -180,8 +174,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player Select_1: -710764186
-      Player Select_0: 1701015233
+      Player 2 Select: 8453041443550048800
+      Player 1 Select: -3079569258902918314
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -326,7 +326,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 37872c7f384ec2f30800000000000000
-      internalID: 1474131071456372425
+      internalID: 1617866546283984265
       vertices: []
       indices: 
       edges: []
@@ -525,7 +525,7 @@ TextureImporter:
       Player 1 - 3: -6127215198058392024
       Player 2 - 5: 4037833166851039263
       Player 1 - 5: -4906125199742805290
-      Player 1 - 8: 1474131071456372425
+      Player 1 - 8: 1617866546283984265
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

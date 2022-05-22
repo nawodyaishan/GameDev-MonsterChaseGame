@@ -1,1 +1,1 @@
-## Monster Chase Game using Unity Engine
+## Monster Chase 2D game using Unity Engine and C# Programming Language.

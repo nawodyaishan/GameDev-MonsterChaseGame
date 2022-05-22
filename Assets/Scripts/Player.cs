@@ -35,12 +35,6 @@ public class Player : MonoBehaviour
 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -58,7 +52,7 @@ public class Player : MonoBehaviour
 
         movementX = Input.GetAxisRaw("Horizontal");
 
-        transform.position += new Vector3(movementX, 0f, 0f) * moveForce * Time.deltaTime;
+        transform.position += new Vector3(movementX, 0f, 0f) * (moveForce * Time.deltaTime);
 
     }
 
